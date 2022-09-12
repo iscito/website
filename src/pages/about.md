@@ -13,9 +13,10 @@ PLC and DCS platforms, IoT, OT and electrical systems.
 Strong commitment to safety and customer satisfaction throughout all 
 project execution phases.
 
-I am on the Project Management Committee for the Apache PLC4X project for the 
+I have been on the Project Management Committee for the Apache PLC4X project for the 
 past few years. This project has given me the ability to get to know the intricacies
-of a lot of industrial PLC protocols such as PROFINET, OPC UA, MODBUS and Ethernet/IP.
+of a lot of industrial PLC protocols such as PROFINET, OPC UA, MODBUS and Ethernet/IP,
+as well as integrate them into OPC-UA servers and Kafka nodes.
 
 I am also interested in integrating streaming platforms, Kafka, MQTT, etc... 
 with SCADA systems to be able to provide advanced solutions within the preventative 
