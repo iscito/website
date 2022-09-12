@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://iscito.com/blog</id>
+    <title>iscito Blog</title>
+    <updated>2022-09-12T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://iscito.com/blog"/>
+    <subtitle>iscito Blog</subtitle>
+    <icon>https://iscito.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[PLC4X OPCUA Server]]></title>
+        <id>PLC4X OPCUA Server</id>
+        <link href="https://iscito.com/blog/PLC4X OPCUA Server"/>
+        <updated>2022-09-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The PLC4X OPC-UA Server is an integration with the PLC4X]]></summary>
+        <content type="html"><![CDATA[<p>The PLC4X OPC-UA Server is an integration with the PLC4X
+stack which allows for communication via a number of industrial
+protocols, and the Eclipse Milo OPC-UA server stack.
+This allows you to make available via OPC-UA time series data points
+using any of these protocols:-</p><ul><li>Modbus</li><li>Ethernet/IP (Including Rockwell)</li><li>ADS (Beckhoff)</li><li>S7 (Siemens)</li><li>OPCUA</li><li>BACNET (Building Automation)</li><li>Clipsal C-Bus</li><li>CANOpen</li><li>KNX (Building Automation)</li><li>PROFINET (In Development)</li><li>and a simulation device.</li></ul><p>PLC4X is an industrial communication open source package. It has implementations in
+Java, Go and C (Java is the most complete, followed by Go and C). The OPC-UA server
+uses the Java version. </p><p>OPC-UA is the next iteration of OPC and has a number of benefits. For me the major
+points to migrate away from OPC are:-</p><ul><li>OPC is based on old technology (DCOM/RPC) which is being phased out by Microsoft.</li><li>DCOM has always been difficult to configure to allow remote communication.</li><li>OPC is primarily a Microsoft Windows technology.</li><li>OPC uses any number and random TCP ports making it hard to configure inter-network
+communication.</li></ul><p>OPC-UA has been around for a number of years now and is increasing making it's way into
+the industrial market. Most SCADA packages now support OPC-UA.</p><ul><li>OPC-UA uses only one TCP port, which makes firewall configuration simple.</li><li>It can be run on linux systems allowing for smaller footprint servers. An example would
+be running the PLC4X OPC-UA server on a docker image.</li><li>It seems to have a larger code base in the open source community.</li><li>As opposed to OPC, OPCUA stacks can be run on the same device as the PLC. Allowing for PLCs
+to support OPCUA natively (Siemens S7-1500).</li></ul><p>The Eclipse Milo OPC-UA stack is an open source stack maintained primarily by Kevin Herron. I believe it is
+the OPC-UA stack that the Ignition SCADA package is based on.</p><p>To run the <a href="https://github.com/apache/plc4x" target="_blank" rel="noopener noreferrer">PLC4X server</a>, copy the config file from src/main/resources/config.yml and modify it as below.
+You'll need to build the server from with the plc4j/integrations/opcua-server directory.</p><blockquote><p>mvn install</p></blockquote><p>run the executable:-</p><blockquote><p>   java -jar target/plc4x-opcua-server-0.10.0-SNAPSHOT-uber-jar.jar -c config.yml -i</p></blockquote><p>Once the initial configuration is done via the -i switch, the service can then
+be run without interaction. This allows it to be run in terminal, wrapped in a service wrapper, GUI link or docker image;
+however you wish.</p><p>An example config file is located in the PLC4X OPC Server Integrations folder.</p><p><img loading="lazy" alt="PLC4X Config file" src="/assets/images/2022-09-12 10-46-02-7f0bd6c8ec42801b5e6cc328d51eab2d.png" width="562" height="404" class="img_ev3q"></p><p>A directory to store the certificates needs to be specified.
+The connection string syntax can be found at <a href="https://plc4x.apache.org" target="_blank" rel="noopener noreferrer">PLC4X Protocol Syntax</a>,
+which varies depending on the protocol and parameters available.</p><p>Once the server is running it can be connected to using the endpoint url </p><blockquote><p>  opc.tcp://localhost:53530/plc4x</p></blockquote><p>The hostname can be any resolvable name for the host. In this example I have used the
+UA Expert Client, but any client can be used including the PLC4X OPC UA client.</p><p>Once connected you're able to browse and subscribe to the available tags.</p><p><img loading="lazy" alt="Tag Browsing" src="/assets/images/2022-09-12 10-31-45-9da60201d2186ae2943ae26cea7cf70b.png" width="263" height="207" class="img_ev3q"></p><p>The next steps are to continue the great work that Chris has put into the discovery and browse api's. Integrating this
+into the OPC-UA server should allow for the automatic population of the device's and addresses.</p>]]></content>
+        <author>
+            <name>Ben Hutcheson</name>
+            <uri>https://github.com/hutcheb</uri>
+        </author>
+        <category label="plc4x" term="plc4x"/>
+        <category label="opcua" term="opcua"/>
+        <category label="modbus" term="modbus"/>
+        <category label="s7" term="s7"/>
+        <category label="ads" term="ads"/>
+        <category label="eip" term="eip"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PLC4X Kafka Integration]]></title>
+        <id>PLC4X Kafka Integration</id>
+        <link href="https://iscito.com/blog/PLC4X Kafka Integration"/>
+        <updated>2022-09-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Outline]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="outline">Outline<a class="hash-link" href="#outline" title="Direct link to heading">​</a></h3><p>PLC4x is an open source industrial communication protocol package that allows you to pull time series data from
+PLCs or even SCADA packages. Kafka is an event streaming platform that allows you to publish messages (e.g. JSON messages) and have
+them stored in a distributed store called a topic. With the PLC4X Kafka connector you're able to read data from a PLC
+and publish messages to Kafka, and vice versa, you're able to read messages from Kafka and write data to PLC tags.</p><p>Apache Kafka has become fairly ubiquitous as the event streaming platform, Azure Events Hub even has a Kafka compatible
+interface. This means that you could have a Kafka cluster on premise and then mirror data from it to Azure Events Hub,
+(or any number of Kafka based cloud platforms e.g. Confluent) which makes it incredibly easy to integrate with other
+Azure or online services.</p><p>The PLC4X Kafka integration is made of a source and sink Kafka Connect worker and allows you to specify any protocol that
+PLC4X supports e.g. Modbus, OPCUA, S7, Ethernet/IP, more information is available on the <a href="https://plc4x.apache.org" target="_blank" rel="noopener noreferrer">PLC4X Driver Page</a>.
+The Connect workers are also made available within the Counfluent Hub for easy download. Additional information is available on how
+to set it up is available at <a href="https://plc4x.apache.org" target="_blank" rel="noopener noreferrer">PLC4X Kafka Integration</a>.</p><p>One of the primary use cases of this is to read time series data from a PLC, do some real time analysis (averaging,
+forecasting, ML) on it and then send it to a database or back to a PLC/SCADA package.</p><p>Or you could poll data from an external service (weather forecast, energy price) and then send it
+to the Kafka cluster and then in turn to a PLC or SCADA system. You could place a Kafka cluster within the integration layer and have Kafka Connect workers
+perform this reliably and securely.</p><p>Another example use case would be to read data from one PLC and have that sent in realtime to another PLC. Although not a
+typical way of doing inter-PLC communication, it has the added benefit of having a highly redundant centralized cluster
+that is completely customizable. You don´t have to play around with non-native communication protocols for each PLC,
+you can just use PLC4X. This also gives you the option to modify the messages or perform analysis before sending to the
+destination PLC.</p><p>Overall having a Kafka cluster or even Azure Events Hub utilizing the PLC4X connectors as part your industrial tech
+stack has a number of benefits and could be a worthy addition, especially if you are looking at integrating third party
+services with SCADA or PLC packages.</p>]]></content>
+        <author>
+            <name>Ben Hutcheson</name>
+            <uri>https://github.com/hutcheb</uri>
+        </author>
+        <category label="plc4x" term="plc4x"/>
+        <category label="kafka" term="kafka"/>
+        <category label="opcua" term="opcua"/>
+        <category label="modbus" term="modbus"/>
+        <category label="s7" term="s7"/>
+        <category label="ads" term="ads"/>
+        <category label="eip" term="eip"/>
+    </entry>
+</feed>

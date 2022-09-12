@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"PLC4X OPCUA Server","permalink":"/blog/PLC4X OPCUA Server"},{"title":"PLC4X Kafka Integration","permalink":"/blog/PLC4X Kafka Integration"}]}')}}]);
