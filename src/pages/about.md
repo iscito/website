@@ -15,6 +15,8 @@ PLC and DCS platforms, IoT, OT and electrical systems.
 Strong commitment to safety and customer satisfaction throughout all 
 project execution phases.
 
+This is my personal blog to showcase what I have been working on.
+
 I have been on the Project Management Committee for the Apache PLC4X project for the 
 past few years. This project has given me the ability to get to know the intricacies
 of a lot of industrial PLC protocols such as PROFINET, OPC UA, MODBUS and Ethernet/IP,
