@@ -42,10 +42,6 @@ const config = {
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
-                googleAnalytics: {
-                    trackingID: 'G-2L46GSHRRB',
-                    anonymizeIP: true,
-                },
             }),
         ],
     ],
@@ -80,6 +76,18 @@ const config = {
                 darkTheme: darkCodeTheme,
             },
         }),
+};
+
+module.exports = {
+    plugins: [
+        [
+            '@docusaurus/plugin-google-analytics',
+            {
+                trackingID: 'G-2L46GSHRRB',
+                anonymizeIP: true,
+            },
+        ],
+    ],
 };
 
 module.exports = config;
