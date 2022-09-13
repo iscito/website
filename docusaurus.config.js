@@ -38,6 +38,7 @@ const config = {
                     // Remove this to remove the "edit this page" links.
                     editUrl:
                         'https://github.com/iscito/website/tree/main/',
+                    routeBasePath: '/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -54,9 +55,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
             navbar: {
-                title: 'Home',
+                title: 'Blog',
                 items: [
-                    {to: '/blog', label: 'Blog', position: 'left'},
                     {to: '/about', label: 'About', position: 'left'},
                 ],
             },
@@ -68,7 +68,7 @@ const config = {
                         items: [
                             {
                                 label: 'Blog',
-                                to: '/blog',
+                                to: '/',
                             },
                         ],
                     },
