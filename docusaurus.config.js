@@ -42,16 +42,11 @@ const config = {
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
-            }),
-        ],
-        [
-            '@docusaurus/preset-classic',
-            {
                 googleAnalytics: {
                     trackingID: 'G-2L46GSHRRB',
                     anonymizeIP: true,
                 },
-            },
+            }),
         ],
     ],
 
