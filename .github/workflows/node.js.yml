@@ -35,5 +35,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          source: "build/*"
+          source: "build/"
           target: "/opt/lampp/htdocs/"
+          strip_components: 1
