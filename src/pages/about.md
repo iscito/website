@@ -3,9 +3,14 @@ title: About Me
 ---
 
 ## Ben Hutcheson
-##### Software Developer / Control Systems Engineer
-##### [LinkedIn Profile](https://www.linkedin.com/in/ben-hutcheson-547885102/)
-##### [Github Profile](https://github.com/hutcheb)
+##### **Software Developer / Control Systems Engineer**
+
+#### Profiles
+##### [LinkedIn](https://www.linkedin.com/in/ben-hutcheson-547885102/)
+##### [GitHub](https://github.com/hutcheb)
+##### [Stack Overflow](https://stackoverflow.com/users/18728030/ben-hutcheson)
+
+#### Email
 ##### [ben.hutche@gmail.com](mailto:ben.hutche@gmail.com)
 ##### [hutcheb@iscito.com](mailto:hutcheb@iscito.com) (Available on MS Teams)
 
