@@ -35,7 +35,7 @@ maintenance, reporting and distributed computing spaces.
 I'm always looking for new reasons to grow my skillset. If you have any
 questions or opportunities please feel free to reach out.
 
-##### [![Ben's GitHub stats](https://github-readme-stats.vercel.app/api?username=hutcheb&count_private=true&show_icons=true&include_all_commits=true&custom_title=Github%20Stats)](https://github.com/hutcheb)
+##### [![Ben's GitHub stats](https://github-readme-stats.vercel.app/api?username=hutcheb&count_private=true&show_icons=true&include_all_commits=false&custom_title=Github%20Stats)](https://github.com/hutcheb)
 
 
 
